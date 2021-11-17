@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devpedrod.springboot_mongodb.domain.User;
+import com.devpedrod.springboot_mongodb.dto.UserDTO;
 import com.devpedrod.springboot_mongodb.service.UserService;
 
 @RestController
@@ -19,9 +19,9 @@ public class UserResource {
 	private UserService service;
 	
 	@GetMapping
-	public ResponseEntity<List<User>> findAll() {
-		List<User> list = service.findAll();
-		return ResponseEntity.ok().body(list);	
+	public ResponseEntity<List<UserDTO>> findAll() {
+		List<UserDTO> userList = service.findAll();
+		return ResponseEntity.ok().body(userList);	
 	}
 
 }
